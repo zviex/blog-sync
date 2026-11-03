@@ -25,6 +25,7 @@ CALL start_ui();
 
 
 ## 创建新表
+创建一个名为new_table的新表
 ```shell
  podman exec -it duckdb-interactive duckdb new_table.duckdb
 ```
