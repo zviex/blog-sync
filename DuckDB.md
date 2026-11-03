@@ -13,3 +13,18 @@ services:
     working_dir: /workspace # 对应 -w，设置工作目录
     network_mode: host 
 ```
+
+## WEBUI
+```bash
+podman exec -it duckdb-interactive duckdb
+```
+
+```sql
+CALL start_ui();
+```
+
+
+## 创建新表
+```shell
+ podman exec -it duckdb-interactive duckdb new_table.duckdb
+```
