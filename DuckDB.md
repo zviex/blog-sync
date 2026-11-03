@@ -25,7 +25,15 @@ CALL start_ui();
 
 
 ## 创建新表
-创建一个名为new_table的新表
+全新安装的duckdb没有任何存储实例，需要先创建一个名为new_table的新存储实例
 ```shell
  podman exec -it duckdb-interactive duckdb new_table.duckdb
+```
+
+
+从csv导入数据到新表my_table
+```sql
+CREATE TABLE my_table AS
+SELECT * FROM
+read_csv('/import/user_online.csv', auto_detect =true);
 ```
