@@ -47,6 +47,22 @@ func NewServer(opts ...Option) *Server {
 
 ```
 
+还有另一种接口版本的Options模式，他更工程化。
+```go
+type Option interface {
+	apply(*options)
+}
+
+
+func func WithHTTPGet() Option {
+	return enableGetOption{}
+}
+
+```
+
+接口版本的Options模式为什么更友好呢？
+1. 函数式的Option由于必须要导出
+
 ## 原子指针的客户端并发保护与单例模式
 #### 饿汉式
 以任何方式在初始化时，就已经初始化好了，可以通过封装方法直接访问的单例。天然线程安全
