@@ -1,7 +1,7 @@
 # MQTT
 
 ## 订阅发布模型
-这个是模型非常类似于消息队列，在mqtt内部主要分为三种，`Publisher`,`Broker`,`Subscriber`。
+这个是模型非常类似于消息队列，在mqtt内部主要分为三种，`Publisher`,`Broker`,`Subscriber`。在这个模型中，并不传统局限于client和server这两个概念，所以比如一个传感器设备本身可能是Publisher，也可能是Subscriber。
 
 mqtt中，无需实现创建topic，broker的流程是，当发布者发送消息，broker只会转发当前的消息的订阅者，如果没有订阅者，则会丢弃消息
 
